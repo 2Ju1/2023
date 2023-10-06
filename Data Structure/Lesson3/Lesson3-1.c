@@ -1,3 +1,4 @@
+//스택을 배열로 구현
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX_STACK_SIZE 100
