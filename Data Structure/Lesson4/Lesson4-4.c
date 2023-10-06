@@ -1,4 +1,5 @@
-//동적스택으로 만들기_빌리고 반납하기
+//동적 배열 스택_빌리고 반납하기_부족하면 더 빌리기 realloc함수로(교과서 4.5)
+//malloc, realloc 어렵게 생각하지 말 것. 그냥 다른 영역의 메모리 연결시켜주는 것
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX_STACK_SIZE 100
@@ -11,9 +12,8 @@ typedef struct {
 }StackType;
 
 int main() {
-	StackType* s;
-	s = (StackType*)malloc(sizeof(StackType));//빌리기
-	init_stack(s);
+	StackType s;
+	init_stack(&s);
 
 	push(&s, 1);
 	push(&s, 2);
@@ -44,11 +44,12 @@ int is_empty(StackType* s) {
 int is_full(StackType* s) {
 	return(s->top == (MAX_STACK_SIZE - 1));
 }
-//삽입함수
+
 void push(StackType* s, element item) {
 	if (is_full(s)) {
-		s->capacity*=2;//tkdlwm zldnjwnrl
-        s->data=(element*)//////////////////////
+		s->capacity*=2;//공간 늘려줄게
+        s->data=(element*)realloc(s->data,s->capacity*sizeof(element));
+        //늘려진 공간만큼 realloc으로 재할당 받기
 	}
 	else
 		s->data[++(s->top)] = item;

@@ -1,3 +1,4 @@
+//배열과 top을 하나의 구조체로 묶기 교과서 4.3
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -36,6 +37,14 @@ element pop(StackType* s) {
 		exit(1);
 	}
 	else return s->data[(s->top)--];
+}
+//피크함수
+element peek(StackType *s){
+	if(is_empty(s)){
+		fprintf(stderr,"스택 공백 에러\n");
+		exit(1);
+	}
+	else return s->data[s->top];
 }
 int main() {
 	StackType s;
