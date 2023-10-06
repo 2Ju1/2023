@@ -34,6 +34,7 @@ int pop(StackType* s) {
 
 int main() {
     StackType s;
+    init_stack(&s);
     int size;
     int array[MAX_STACK_SIZE];
     printf("정수 배열의 크기: ");
