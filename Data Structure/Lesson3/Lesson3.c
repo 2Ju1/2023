@@ -35,4 +35,8 @@ int main(void) {
 	push(1);
 	push(2);
     push(3);
+	printf("%d\n",pop());
+	printf("%d\n",pop());
+	printf("%d\n",pop());
+	return 0;
 }
