@@ -29,7 +29,7 @@ int is_full(StackType* s) {
 void push(StackType* s, char item) {
     if (is_full(s)) {
         fprintf(stderr, "스택 포화 에러\n");
-        return;//왜 이걸로 나가는거지?
+        return;
     }
     else
         s->line[++(s->top)].data = item;
@@ -39,7 +39,7 @@ void push(StackType* s, char item) {
 char pop(StackType* s) {
     if (is_empty(s)) {
         fprintf(stderr, "스택 공백 에러\n");
-        exit(1);//이번에는 왜 이걸로 나가고?
+        exit(1);
     }
     else return s->line[(s->top)--].data;
 }
