@@ -34,19 +34,19 @@ int pop(StackType* s) {
 
 int main() {
     StackType s;
+    init_stack(&s);
     int size;
     int array[MAX_STACK_SIZE];
     printf("정수 배열의 크기: ");
     scanf("%d", &size);
-
+    printf("정수를 입력하시오: ");
     for (int i = 0; i < size; i++) {
-        printf("정수를 입력하시오: ");
         scanf("%d", &array[i]);
         push(&s, array[i]);
     }
     printf("반전된 정수 배열: ");
     for (int i = 0; i < size; i++) {
-        printf("%d", pop(&s));
+        printf("%d ", pop(&s));
     }
     return 0;
 
